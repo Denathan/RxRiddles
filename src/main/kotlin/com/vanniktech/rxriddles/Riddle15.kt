@@ -8,7 +8,5 @@ object Riddle15 {
    *
    * Use case: You have two sources of your data (cache & network request). You want to subscribe to both right away and keep the emission order.
    */
-  fun solve(first: Observable<Int>, second: Observable<Int>): Observable<Int> {
-    TODO()
-  }
+  fun solve(first: Observable<Int>, second: Observable<Int>): Observable<Int> = Observable.concatEager(listOf(first, second))
 }

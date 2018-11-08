@@ -8,7 +8,5 @@ object Riddle14 {
    *
    * Use case: Retry an operation for a number of times or until a valid error occurred.
    */
-  fun solve(source: Single<Unit>): Single<Unit> {
-    TODO()
-  }
+  fun solve(source: Single<Unit>): Single<Unit> = source.retry(2) { it !is IllegalArgumentException }
 }

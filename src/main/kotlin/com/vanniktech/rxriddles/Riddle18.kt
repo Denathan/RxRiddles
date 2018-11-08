@@ -8,7 +8,5 @@ object Riddle18 {
    *
    * Use case: You have multiple sources and want to get the data from either one and then be consistent and not switch between multiple sources.
    */
-  fun solve(first: Observable<Int>, second: Observable<Int>): Observable<Int> {
-    TODO()
-  }
+  fun solve(first: Observable<Int>, second: Observable<Int>): Observable<Int> = Observable.amb(listOf(first, second))
 }
