@@ -8,7 +8,5 @@ object Riddle30 {
    *
    * Use case: Add some logging.
    */
-  fun solve(source: Single<Int>, function: () -> Unit): Single<Int> {
-    TODO()
-  }
+  fun solve(source: Single<Int>, function: () -> Unit): Single<Int> = source.doOnSubscribe { function.invoke() }
 }
